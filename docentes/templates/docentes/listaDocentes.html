@@ -1,88 +1,363 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>Lista de Docentes</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+>
+
+<title>Docentes</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+
+body{
+    background:#f4f6f9;
+}
+
+.encabezado-principal{
+    background:white;
+    border-bottom:1px solid #dee2e6;
+}
+
+.nombre-sitio{
+    font-weight:bold;
+    font-size:25px;
+}
+
+.nav-link{
+    color:#212529;
+    font-weight:600;
+}
+
+.nav-link:hover{
+    color:#0d6efd;
+}
+
+.nav-link.active{
+    color:#0d6efd;
+}
+
+.titulo{
+    font-weight:bold;
+}
+
+.tarjeta-docente{
+
+    background:white;
+
+    border:1px solid #d7dce1;
+
+    border-radius:15px;
+
+    transition:.2s;
+
+    height:100%;
+}
+
+.tarjeta-docente:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0px 8px 18px rgba(0,0,0,.10);
+
+}
+
+.foto-docente{
+
+    width:170px;
+
+    height:190px;
+
+    object-fit:cover;
+
+    border-radius:15px 0px 0px 15px;
+
+}
+
+.sin-foto{
+
+    width:170px;
+
+    height:190px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#ececec;
+
+    border-radius:15px 0px 0px 15px;
+
+    font-size:55px;
+
+    color:#9a9a9a;
+
+}
+
+.info{
+
+    padding:20px;
+
+}
+
+.nombre{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.acciones{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+}
+
+.acciones a{
+
+    font-size:22px;
+
+    margin-left:8px;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <h1>DOCENTES REGISTRADOS</h1>
+<header class="encabezado-principal">
 
-    <table border="1">
+<div class="container py-3">
 
-        <thead>
+<div class="d-flex justify-content-between align-items-center">
 
-            <tr>
+<div class="nombre-sitio">
 
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo</th>
-                <th>Cédula</th>
-                <th>Tipo de Sangre</th>
-                <th>Dirección</th>
-                <th>Imagen</th>
+Sitio de oferta de cursos
 
-            </tr>
+</div>
 
-        </thead>
+<nav class="nav gap-3">
 
-        <tbody>
+<a class="nav-link" href="/">
 
-            {% for docente in docentes %}
 
-            <tr>
+<i class="bi bi-house-fill"></i>
 
-                <td>{{docente.nombre}}</td>
+Inicio
 
-                <td>{{docente.apellido}}</td>
+</a>
 
-                <td>{{docente.correo}}</td>
+<a class="nav-link active" href="/verDocentes/">
 
-                <td>{{docente.cedula}}</td>
+<i class="bi bi-person-workspace"></i>
 
-                <td>{{docente.tipo_sangre}}</td>
+Docentes
 
-                <td>{{docente.direccion}}</td>
+</a>
 
-                <td>
+<a class="nav-link" href="/cursos/">
 
-                    {% if docente.imagen %}
+<i class="bi bi-book-fill"></i>
 
-                        <img src="{{docente.imagen.url}}" width="100">
+Cursos
 
-                    {% else %}
+</a>
 
-                        Sin imagen
+</nav>
 
-                    {% endif %}
+</div>
 
-                </td>
+</div>
 
-            </tr>
+</header>
 
-            {% empty %}
+<div class="container py-5">
 
-            <tr>
+<div class="d-flex justify-content-between align-items-center mb-4">
 
-                <td colspan="7">
+<div>
 
-                    No existen docentes registrados.
+<h2 class="titulo">
 
-                </td>
+Nuestro Personal
 
-            </tr>
+</h2>
 
-            {% endfor %}
+<p class="text-secondary">
 
-        </tbody>
+Docentes registrados en el sistema.
 
-    </table>
+</p>
+
+</div>
+
+<a href="/nuevoDocente/" class="btn btn-primary">
+
+<i class="bi bi-plus-circle"></i>
+
+Agregar Docente
+
+</a>
+
+</div>
+
+
+{% if docentes %}
+
+<div class="row g-4">
+
+{% for docente in docentes %}
+
+<div class="col-lg-6">
+
+<div class="tarjeta-docente position-relative">
+
+<div class="row g-0">
+
+<div class="col-4">
+
+{% if docente.imagen %}
+
+<img
+src="{{ docente.imagen.url }}"
+class="foto-docente">
+
+{% else %}
+
+<div class="sin-foto">
+
+<i class="bi bi-person-fill"></i>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<div class="col-8">
+
+<div class="info">
+
+<div class="acciones">
+
+<a
+href="/editarDocente/{{docente.id}}/"
+class="text-primary">
+
+<i class="bi bi-pencil-square"></i>
+
+</a>
+
+<a
+href="/eliminarDocente/{{docente.id}}/"
+class="text-danger">
+
+<i class="bi bi-trash-fill"></i>
+
+</a>
+
+</div>
+
+<div class="nombre">
+
+{{docente.nombre}} {{docente.apellido}}
+
+</div>
+
+<hr>
+
+<p>
+
+<b>Correo:</b>
+
+{{docente.correo}}
+
+</p>
+
+<p>
+
+<b>Cédula:</b>
+
+{{docente.cedula}}
+
+</p>
+
+<p>
+
+<b>Tipo de sangre:</b>
+
+{{docente.tipo_sangre}}
+
+</p>
+
+<p>
+
+<b>Dirección:</b>
+
+{{docente.direccion}}
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% else %}
+
+<div class="alert alert-secondary text-center p-5">
+
+<h3>
+
+No existen docentes registrados.
+
+</h3>
+
+<p>
+
+Agregue el primer docente para comenzar.
+
+</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
-
 </html>
