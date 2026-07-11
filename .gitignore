@@ -1,18 +1,18 @@
-# Entorno virtual
+# Entornos virtuales
 entornoG9/
+venv/
+.venv/
 
 # Archivos Python
 __pycache__/
 *.pyc
+*.pyo
 
 # Base SQLite (por si existe)
 db.sqlite3
 
-# Archivos de VS Code
+# VS Code
 .vscode/
 
 # Variables de entorno
 .env
-
-# Archivos de migraciones compilados
-*.pyo
