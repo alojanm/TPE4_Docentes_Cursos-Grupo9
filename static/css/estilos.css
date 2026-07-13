@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CONFIGURACIÓN GENERAL */
 
 * {
@@ -213,4 +214,9 @@ footer p {
         flex-wrap: wrap;
     }
 
+=======
+body{
+    margin:0;
+    padding:0;
+>>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
 }

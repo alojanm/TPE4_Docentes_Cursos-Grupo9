@@ -12,4 +12,9 @@ class Docente(models.Model):
     imagen = models.ImageField(upload_to='docentes/', null=True, blank=True)
 
     def __str__(self):
+<<<<<<< HEAD
         return f"{self.nombre} {self.apellido}"
+=======
+        return f"{self.nombre} {self.apellido}"
+    
+>>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
