@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 from django.shortcuts import render
 
 # Create your views here.
-=======
+
 from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect, render
 
@@ -115,4 +115,4 @@ def eliminar_curso(request, curso_id):
             "curso": curso,
         },
     )
->>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
+
