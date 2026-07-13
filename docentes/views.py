@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 from django.shortcuts import render
 
-=======
 from django.urls import reverse_lazy
 
 from django.views.generic import ListView
@@ -53,5 +52,5 @@ class EliminarDocente(DeleteView):
     success_url =reverse_lazy("lista_docentes")
     
     
->>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
+
 # Create your views here.

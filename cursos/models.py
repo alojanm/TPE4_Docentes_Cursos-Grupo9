@@ -1,8 +1,7 @@
 from django.db import models
-<<<<<<< HEAD
 
 # Create your models here.
-=======
+
 from docentes.models import Docente
 
 
@@ -29,4 +28,4 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nombre
->>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
+

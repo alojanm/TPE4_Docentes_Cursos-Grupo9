@@ -1,37 +1,24 @@
-<<<<<<< HEAD
+
 # Entorno virtual
 entornoG9/
-=======
+
 # Entornos virtuales
 entornoG9/
 venv/
 .venv/
->>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
+
 
 # Archivos Python
 __pycache__/
 *.pyc
-<<<<<<< HEAD
-=======
+
 *.pyo
->>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
 
 # Base SQLite (por si existe)
 db.sqlite3
 
-<<<<<<< HEAD
-# Archivos de VS Code
-.vscode/
-
-# Variables de entorno
-.env
-
-# Archivos de migraciones compilados
-*.pyo
-=======
 # VS Code
 .vscode/
 
 # Variables de entorno
 .env
->>>>>>> f62071db688d5a2c636524db9797e5e29c2d9b4a
