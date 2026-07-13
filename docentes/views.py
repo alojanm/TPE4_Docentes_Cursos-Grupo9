@@ -37,7 +37,7 @@ class EditarDocente(UpdateView):
 
     template_name = "docentes/editarDocente.html"
 
-    success_url = reverse_lazy("lista_docentes")
+    success_url = reverse_lazy ("lista_docentes")
 
 
 class EliminarDocente(DeleteView):
@@ -46,6 +46,7 @@ class EliminarDocente(DeleteView):
 
     template_name = "docentes/eliminarDocente.html"
 
-    success_url = reverse_lazy("lista_docentes")
+    success_url =reverse_lazy("lista_docentes")
+    
     
 # Create your views here.
