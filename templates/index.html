@@ -1,0 +1,200 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Principal | Sitio de Oferta de Cursos</title>
+
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+</head>
+
+
+<body>
+
+    <div class="contenedor">
+
+
+        <!-- ENCABEZADO -->
+
+        <header>
+
+            <h1>SITIO DE OFERTA DE CURSOS</h1>
+
+            <nav>
+
+                <a href="/">🏠 HOME</a>
+
+                <a href="#">👨‍🏫 DOCENTES</a>
+
+                <a href="#">📖 CURSOS</a>
+
+            </nav>
+
+        </header>
+
+
+
+        <!-- SECCIÓN DE ESTUDIANTES -->
+
+        <section class="estudiantes">
+
+
+            <!-- MARIBEL -->
+
+            <div class="tarjeta-estudiante">
+
+                <div class="imagen-estudiante">
+
+                    <img src="{% static 'img/Maribel.jpg' %}"
+                         alt="Foto de Maribel">
+
+                </div>
+
+                <h3>Maribel Del Rocio Iza Verdesoto</h3>
+
+                <p>Nivel: 6</p>
+
+            </div>
+
+
+
+            <!-- ANA -->
+
+            <div class="tarjeta-estudiante">
+
+                <div class="imagen-estudiante">
+
+                    <img src="{% static 'img/Ana.jpeg' %}"
+                         alt="Foto de Ana">
+
+                </div>
+
+                <h3>Ana Elizabeth Lojan Malla</h3>
+
+                <p>Nivel: 6</p>
+
+            </div>
+
+
+
+            <!-- JESSICA -->
+
+            <div class="tarjeta-estudiante">
+
+                <div class="imagen-estudiante">
+
+                    <img src="{% static 'img/Jessica.jpeg' %}"
+                         alt="Foto de Jessica">
+
+                </div>
+
+                <h3>Jessica Jessenia Macias Moya</h3>
+
+                <p>Nivel: 6</p>
+
+            </div>
+
+
+
+            <!-- JEFEFRSON -->
+
+            <div class="tarjeta-estudiante">
+
+                <div class="imagen-estudiante">
+
+                    <img src="{% static 'img/Jefferson.jpg' %}"
+                         alt="Foto de Jefefrson">
+
+                </div>
+
+                <h3>Jefefrson Camilo Quishpe Herrera</h3>
+
+                <p>Nivel: 6</p>
+
+            </div>
+
+
+
+            <!-- JOSELYN -->
+
+            <div class="tarjeta-estudiante">
+
+                <div class="imagen-estudiante">
+
+                    <img src="{% static 'img/Josselyn.jpg' %}"
+                         alt="Foto de Joselyn">
+
+                </div>
+
+                <h3>Joselyn Aracely Toaquiza Sillo</h3>
+
+                <p>Nivel: 6</p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- SECCIÓN DE DOCENTES Y CURSOS -->
+
+        <section class="informacion">
+
+
+            <!-- DOCENTES -->
+
+            <div class="tarjeta-info">
+
+                <h2>👨‍🏫 Docentes</h2>
+
+                <p>
+                    Conoce a nuestros docentes, profesionales con experiencia
+                    y conocimientos en diferentes áreas de enseñanza.
+                </p>
+
+                <a href="#">Ver docentes</a>
+
+            </div>
+
+
+
+            <!-- CURSOS -->
+
+            <div class="tarjeta-info">
+
+                <h2>📖 Cursos</h2>
+
+                <p>
+                    Explora los diferentes cursos disponibles y conoce
+                    las opciones de aprendizaje que ofrecemos.
+                </p>
+
+                <a href="#">Ver cursos</a>
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- PIE DE PÁGINA -->
+
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>
